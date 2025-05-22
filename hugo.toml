@@ -1,4 +1,4 @@
-baseURL = 'https://nudca.github.io'
+baseURL = 'https://qiuhongchen.github.io/nudca.github.io/'
 languageCode = 'en-us'
 title = 'NuDCA'
 theme = 'hugo-theme-relearn'
