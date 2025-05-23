@@ -4,6 +4,7 @@ title = 'NuDCA'
 theme = 'hugo-theme-relearn'
 
 [params]
+  themeVariant = ['blue']
   math = true
 
 [markup]
