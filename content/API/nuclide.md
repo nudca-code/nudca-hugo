@@ -1,28 +1,14 @@
 +++
 date = '2025-05-26T15:49:27+08:00'
 draft = false
-title = 'API'
+title = 'Nuclide'
 weight = 5
 +++
-
-# radioactivedecay.decaydata.DEFAULTDATADecayData
-
-**Default radioactive decay dataset used by `radioactivedecay`.**  
-This dataset currently uses ICRP-107 for decay data and AME2020 and Nubase2020 for atomic mass data.
-
 ---
 
-## Variables
-
-- **DEFAULTDATADecayData**  
-  The default dataset name for use with `radioactivedecay.decaydata.load_dataset`.
+load_dataset(dataset_name=None, dir_path=None, load_sympy=False)
 
 ---
-
-## Methods
-
-### load_dataset(dataset_name=None, dir_path=None, load_sympy=False)
-
 Load a decay dataset, either from a set of data files packaged within `radioactivedecay`, or by specifying a local directory containing the data files.
 
 **Parameters:**
@@ -39,7 +25,6 @@ A decay dataset used by `radioactivedecay`.
 **Return type:**  
 `DecayData`
 
----
 
 ### Example
 
