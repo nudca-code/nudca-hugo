@@ -192,13 +192,5 @@ This is a statement (taken from Amaku et al. [(2019)](/References/References/#Am
 
 
 
-## Analytical 
-$$
-\dot{\epsilon}(t) = \dot{\epsilon}_{0}\left( \frac{1}{2} - \frac{1}{\pi}\arctan\left[\frac{t-t_{0}}{\sigma}\right] \right)^{\alpha}
-$$
 
-
-$$
-\dot{\epsilon}(t) = \dot{\epsilon}_{0}\left( \frac{1}{2} - \frac{1}{\pi}\arctan\left[\frac{t-t_{0}}{\sigma}\right] \right)^{\alpha} \left( \frac{1}{2} + \frac{1}{\pi}\arctan\left[\frac{t-t_{1}}{\sigma_{1}}\right] \right)^{\alpha_{1}} + C_{1}e^{-t/\tau_{1}} + C_{2}e^{-t/\tau_{2}} + C_{3}e^{-t/\tau_{3}}
-$$
 
