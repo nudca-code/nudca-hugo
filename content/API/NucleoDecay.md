@@ -1,5 +1,5 @@
 +++
-title = 'NucleoDecay'
+title = 'nudca.nucleo_decay'
 weight = 6
 +++
 

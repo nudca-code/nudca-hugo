@@ -1,6 +1,6 @@
 +++
 description = 'Where our lookout pretends to spot land while actually napping'
-title = 'DecayDatabase'
+title = 'nudca.decay_database'
 weight = 4
 +++
 

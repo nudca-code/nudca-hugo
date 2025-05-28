@@ -1,5 +1,5 @@
 +++
-title = "kilonovae"
+title = "Submodule:kilonovae"
 weight = 6
 +++
 

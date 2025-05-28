@@ -1,5 +1,5 @@
 +++
-title = 'DecayDiagram'
+title = 'nudca.decay_diagram'
 weight = 5
 +++
 

@@ -1,5 +1,5 @@
 +++
-title = "kilonovae"
+title = "nudca.kilonovae"
 weight = 7
 +++
 

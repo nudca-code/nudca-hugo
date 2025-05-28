@@ -10,7 +10,7 @@ $$
 $$
 
 
-### Analytical 
+### Analytic description
 $$
 \dot{q}(t) = \dot{\epsilon}_{0}\left( \frac{1}{2} - \frac{1}{\pi}\arctan\left[\frac{t-t_{0}}{\sigma}\right] \right)^{\alpha}
 $$

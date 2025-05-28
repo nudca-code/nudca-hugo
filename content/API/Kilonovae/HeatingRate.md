@@ -1,4 +1,4 @@
 +++
-title = 'heating_rate'
+title = 'nudca.kilonovae.heating_rate'
 weight = 3
 +++

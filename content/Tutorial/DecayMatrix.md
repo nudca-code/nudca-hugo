@@ -1,5 +1,5 @@
 +++
-title = 'DecayMatrix'
+title = 'class:DecayMatrix'
 weight = 4
 +++
 

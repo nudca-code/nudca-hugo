@@ -1,5 +1,5 @@
 +++
-title = 'DecayDatabase'
+title = 'class:DecayDatabase'
 weight = 2
 +++
 

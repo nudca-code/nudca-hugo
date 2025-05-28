@@ -1,4 +1,4 @@
 +++
-title = 'opacity'
+title = 'nudca.kilonovae.opacity'
 weight = 2
 +++

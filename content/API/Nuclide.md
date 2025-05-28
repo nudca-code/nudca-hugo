@@ -1,9 +1,7 @@
 +++
-title = 'Nuclide'
+title = 'nudca.nuclide'
 weight = 3
 +++
-
-# Nuclide API Reference
 
 {{% notice style="info" icon="fa fa-atom" %}}
 This page documents the `nuclide.py` module, which provides data structures and utilities for representing and parsing nuclear nuclides. It is part of the NuDCA (Nuclear Decay Chains Astrophysics) package.

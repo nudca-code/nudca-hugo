@@ -1,5 +1,5 @@
 +++
-title = 'Nuclide'
+title = 'class:Nuclide'
 weight = 1
 +++
 

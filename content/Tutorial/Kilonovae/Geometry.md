@@ -1,5 +1,5 @@
 +++
-title = 'Geometry'
+title = 'class:Geometry'
 weight = 1
 +++
 

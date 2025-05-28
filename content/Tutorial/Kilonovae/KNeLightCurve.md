@@ -1,5 +1,5 @@
 +++
-title = 'KNeLightCurve'
+title = 'class:KNeLightCurve'
 weight = 4
 +++
 

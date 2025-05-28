@@ -1,5 +1,5 @@
 +++
-title = 'Opacity'
+title = 'class:KNOpacity'
 weight = 2
 +++
 

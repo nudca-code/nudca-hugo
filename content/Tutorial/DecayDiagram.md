@@ -1,5 +1,5 @@
 +++
-title = 'DecayDiagram'
+title = 'class:DecayDiagram'
 weight = 3
 +++
 

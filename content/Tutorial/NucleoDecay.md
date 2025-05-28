@@ -1,5 +1,5 @@
 +++
-title = 'NucleoDecay'
+title = 'class:RadioactiveDecay'
 weight = 5
 +++
 

@@ -1,5 +1,5 @@
 +++
-title = 'DecayMatrix'
+title = 'nudca.decay_matrix'
 weight = 6
 +++
 
