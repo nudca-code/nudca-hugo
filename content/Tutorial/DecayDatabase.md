@@ -1,6 +1,4 @@
 +++
-date = '2025-05-26T15:49:27+08:00'
-draft = false
 title = 'DecayDatabase'
 weight = 2
 +++
@@ -17,7 +15,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-![Nuclide](../../images/nuclide_chart.png)
+![Nuclide](../../images/Tutorial/nuclide_chart.png)
 
 
 {{% notice style="primary" title="There may be pirates" icon="skull-crossbones" %}}

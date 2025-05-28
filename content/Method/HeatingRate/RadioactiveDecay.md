@@ -1,6 +1,4 @@
 +++
-date = '2025-05-22T21:59:15+08:00'
-draft = false
 title = 'Radioactive Decay'
 weight = 2
 +++
@@ -186,11 +184,4 @@ $$
 ---
 
 This formalism provides a general framework for analyzing arbitrary radioactive decay chains, including those with branching decays. The matrix approach is particularly powerful for numerical computation and for understanding the structure of the solutions.
-
-
-This is a statement (taken from Amaku et al. [(2019)](/References/References/#Amaku2019)).
-
-
-
-
 
