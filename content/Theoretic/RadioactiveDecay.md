@@ -3,14 +3,13 @@ title = 'Radioactive Decay'
 weight = 1
 +++
 
-## Decay Chains
+## Radioactive Decay
 
 Radioactive decay chains describe the sequential transformation of unstable nuclei into more stable ones through a series of radioactive decays. Each nuclide in the chain decays into the next, until a stable nuclide is reached. The mathematical description of these chains is essential for understanding the time evolution of the number of nuclei of each type.
 
-### System of Differential Equations
+### The decay chain equations
 
-
-The time evolution of the number of nuclei in each stage of the decay chain can be described by a system of coupled first-order differential equations:
+A decay process with branching decay chains can be described as:
 
 $$
 \begin{cases}
@@ -42,7 +41,16 @@ N_{i}(t) \\
 \vdots   \\
 N_{n}(t)
 \end{bmatrix} =
-\boldsymbol{A} 
+\begin{bmatrix}
+-\lambda_{1}      &                   &                   &              &                        &                    &                     \\
+b_{12}\lambda_{1} & -\lambda_{2}      &                   &              &                        &                    &                     \\
+b_{13}\lambda_{1} & b_{23}\lambda_{2} & -\lambda_{3}      &              &                        &                    &                     \\
+\vdots            & \vdots            & \vdots            & \ddots       &                  &                    &        &              \\
+b_{1i}\lambda_{1} & b_{2i}\lambda_{2} & b_{3i}\lambda_{3} & \cdots   & -\lambda_{i}       &        &               \\
+\vdots            & \vdots            & \vdots            & \vdots       & \vdots            & \ddots             &                \\
+b_{1n}\lambda_{1} & b_{2n}\lambda_{2} & b_{3n}\lambda_{3} & \cdots       &  b_{in}\lambda_{i} & \cdots & -\lambda_{n}
+\end{bmatrix}
+\times
 \begin{bmatrix}
 N_{1}(t) \\
 N_{2}(t) \\
@@ -55,7 +63,6 @@ N_{n}(t)
 $$
 
 where $\boldsymbol{A}$ is the transition matrix:
-
 $$
 \boldsymbol{A} = 
 \begin{bmatrix}

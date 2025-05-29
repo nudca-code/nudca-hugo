@@ -5,99 +5,130 @@ weight = 5
 
 
 {{% notice style="info" icon="fa fa-project-diagram" %}}
-This page documents the `decay_diagram.py` module, which provides visualization and analysis tools for nuclide decay chains. It is part of the NuDCA (Nuclear Decay Chain Astrophysics) package.
+This page documents the `DecayDiagram` class from `nudca.decay_diagram`, providing tools to visualize decay chains and reverse decay chains for nuclides.
 {{% /notice %}}
-
-## Overview
-
-The `DecayDiagram` class enables the construction and visualization of nuclear decay chains and their reverse (parent) relationships using `networkx` and `matplotlib`. It provides methods to query decay properties and plot decay diagrams for any nuclide in a given decay database.
 
 ---
 
-## Class: `DecayDiagram`
+## Overview
 
-Represents a decay diagram for a specific nuclide, providing methods to visualize decay chains and reverse decay chains.
+`DecayDiagram` represents a decay diagram for a specific nuclide, offering methods to visualize decay chains and reverse decay chains using `networkx` and `matplotlib`. It provides both programmatic access to decay data and publication-quality plotting.
+
+---
+
+## Class: DecayDiagram
+
+```python
+from nudca.decay_diagram import DecayDiagram
+```
 
 ### Constructor
 ```python
-DecayDiagram(nuclide: str, decay_database)
+DecayDiagram(nuclide: str, decay_database: DecayDatabase)
 ```
-- **nuclide** (`str`): Nuclide symbol (e.g., 'U-238').
-- **decay_database** (`DecayDatabase`): Instance containing decay data.
+- **nuclide**: Nuclide symbol or string (e.g., 'Ni56', 'U-238')
+- **decay_database**: An instance of `DecayDatabase` containing decay data
 
 ---
 
 ## Properties
 
-| Property           | Type                | Description                                      |
-|--------------------|---------------------|--------------------------------------------------|
-| `half_life`        | float or str        | Half-life of the nuclide (various units).        |
-| `progeny`          | list[str]           | Daughter nuclides of the nuclide.                |
-| `branching_ratios` | list[float]         | Branching ratios for all decay modes.            |
-| `decay_modes`      | list[str]           | Decay modes for the nuclide.                     |
+| Property | Type | Description |
+|----------|------|-------------|
+| `nuclide` | `str` | Standardized nuclide symbol |
+| `half_life` | `str` or `float` | Half-life in readable format (default) or seconds |
+| `progeny` | `list[str]` | List of daughter nuclides |
+| `branching_ratios` | `list[float]` | Branching ratios for each decay mode |
+| `decay_modes` | `list[str]` | Decay modes for the nuclide |
 
 ---
 
 ## Methods
 
-### `find_parents`
+### find_parents
 ```python
-def find_parents(self, nuclide: str) -> List[str]
+def find_parents(nuclide: str) -> List[str]
 ```
 Find all possible parent nuclides that can decay to the given nuclide.
+- **nuclide**: Daughter nuclide symbol
+- **Returns**: List of parent nuclide symbols
 
-### `get_decay_info`
+### get_decay_info
 ```python
-def get_decay_info(self, parent: str, daughter: str) -> Optional[Tuple[str, float]]
+def get_decay_info(parent: str, daughter: str) -> Optional[Tuple[str, float]]
 ```
-Get decay mode and branching ratio between a parent and daughter nuclide.
+Get decay information (mode and branching ratio) between a parent and daughter nuclide.
+- **parent**: Parent nuclide symbol
+- **daughter**: Daughter nuclide symbol
+- **Returns**: Tuple `(decay_mode, branching_ratio)` if found, else `None`
 
-### `plot_decay_chains`
+### plot_decay_chains
 ```python
-def plot_decay_chains(self, ...)
+def plot_decay_chains(label_pos=0.3, fig=None, axes=None, kwargs_draw=None, kwargs_edge_labels=None) -> (Figure, Axes)
 ```
-Plot the decay chains starting from the nuclide. Returns a matplotlib Figure and Axes.
+Plot the decay chains starting from the nuclide.
+- **label_pos**: Position of edge labels along the edge (default 0.3)
+- **fig, axes**: Optional matplotlib figure/axes
+- **kwargs_draw**: Additional keyword arguments for `nx.draw`
+- **kwargs_edge_labels**: Additional keyword arguments for `nx.draw_networkx_edge_labels`
+- **Returns**: Matplotlib `Figure` and `Axes`
 
-### `plot_reverse_decay_chains`
+### plot_reverse_decay_chains
 ```python
-def plot_reverse_decay_chains(self, ...)
+def plot_reverse_decay_chains(label_pos=0.3, fig=None, axes=None, kwargs_draw=None, kwargs_edge_labels=None) -> (Figure, Axes)
 ```
-Plot the reverse decay chains (parents) for the nuclide. Returns a matplotlib Figure and Axes.
+Plot the reverse decay chains (all parents) for the nuclide.
+- Arguments as above
+- **Returns**: Matplotlib `Figure` and `Axes`
 
-### `plot`
+### plot
 ```python
-def plot(self, digraph, max_generation, max_xpos, ...)
+def plot(digraph, max_generation, max_xpos, label_pos=0.3, fig=None, axes=None, kwargs_draw=None, kwargs_edge_labels=None) -> (Figure, Axes)
 ```
-Plot a custom decay diagram using a provided networkx DiGraph.
+Low-level method to plot a custom decay digraph. Used internally by the above methods.
 
 ---
 
-## Example Usage
+## Usage Examples
 
 ```python
 from nudca.decay_database import load_decay_database
 from nudca.decay_diagram import DecayDiagram
 
-db = load_decay_database("ENDF-B-VIII.1_decay")
-diagram = DecayDiagram("U-238", db)
+db = load_decay_database()
+decay_diagram = DecayDiagram('Ni56', db)
+
+# Access decay data
+print('Radionuclide:', decay_diagram.nuclide)
+print('Half life:', decay_diagram.half_life)
+print('Progeny:', decay_diagram.progeny)
+print('Decay modes:', decay_diagram.decay_modes)
+print('Branching ratios:', decay_diagram.branching_ratios)
 
 # Plot decay chains
-diagram.plot_decay_chains()[0].show()
+decay_diagram = DecayDiagram('Ni56', db)
+fig, axes = decay_diagram.plot_decay_chains()
+fig.tight_layout()
+# plt.show()
 
 # Plot reverse decay chains
-diagram.plot_reverse_decay_chains()[0].show()
+decay_diagram = DecayDiagram('Fe56', db)
+fig, axes = decay_diagram.plot_reverse_decay_chains()
+fig.tight_layout()
+# plt.show()
 ```
 
 ---
 
 ## Notes
-- Requires `networkx` and `matplotlib` for plotting.
-- Decay data must be provided via a compatible `DecayDatabase` instance.
-- See inline docstrings in the source code for advanced plotting options.
+- Requires `networkx`, `matplotlib`, and a valid `DecayDatabase` instance
+- Plots are publication-quality and can be customized via `kwargs_draw` and `kwargs_edge_labels`
+- Nuclide symbols are automatically standardized
+- For advanced graph customization, use the `plot` method directly
 
 ---
 
 ## See Also
-- [DecayDatabase API](./DecayDatabase/)
-- [DecayMatrix API](./DecayMatrix/)
-
+- [DecayDatabase API](../API/DecayDatabase/)
+- [Nuclide API](../API/Nuclide/)
+- [DecayMatrix API](../API/DecayMatrix/)
