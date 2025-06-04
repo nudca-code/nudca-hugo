@@ -1,6 +1,8 @@
 +++
 title = "nudca API"
 weight = 5
+[params]
+  menuPre = '<i class="fa-brands fa-quinscape"></i> '
 +++ 
 
 ## NuDCA

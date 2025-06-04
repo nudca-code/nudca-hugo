@@ -1,6 +1,9 @@
 +++
 title = "Tutorials"
 weight = 3
+[params]
+  menuPre = '<i class="fa-solid fa-code"></i>'
+  
 +++ 
 
 
