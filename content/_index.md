@@ -6,7 +6,6 @@ type = 'home'
 
 ## NuDCA Core Package Documentation
 
-![NuDCA](images/logo.png?inlinecontent&purple&width=30vh)
 
 
 `NuDCA` is an open-source Python program specifically designed for calculating the decay chains of radioactive nuclides. We have developed a versatile computational framework that efficiently handles decay chains with complex branching ratios. This framework employs a matrix-based numerical solving method, ensuring both analytical accuracy and computational efficiency, enabling rapid resolution of decay chain differential equations.

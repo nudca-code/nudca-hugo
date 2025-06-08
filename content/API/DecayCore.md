@@ -1,6 +1,6 @@
 +++
-title = 'nudca.nucleo_decay'
-weight = 6
+title = 'nudca.decay_core'
+weight = 4
 +++
 
 

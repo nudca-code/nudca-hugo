@@ -1,6 +1,6 @@
 +++
 title = 'nudca.nuclide'
-weight = 3
+weight = 2
 +++
 
 {{% notice style="info" icon="fa fa-atom" %}}

@@ -7,3 +7,4 @@ weight = 2
 
 {{% children containerstyle="div" style="h2" depth="1" description="False" %}}
 
+[NuDCA](images/logo.png?inlinecontent&purple&width=30vh)
